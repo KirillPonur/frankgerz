@@ -6,7 +6,14 @@ from matplotlib import rc
 rc('text', usetex=True)
 rc('font', size=14)
 rc('legend', fontsize=13)
-rc('text.latex', preamble=r'\usepackage{cmbright}')
+plt.rc('text', usetex=True)
+plt.rc('text.latex', unicode=True)
+plt.rc('text.latex', preamble=[r'\usepackage[utf8x]{inputenc}',
+                               r'\usepackage[russian]{babel}',
+                               r'\usepackage{amsmath}',
+                               r'\usepackage{amssymb}'])
+
+plt.rc('font', family='serif')
 import matplotlib.pyplot as plt
 from functions import parsing
 x,y=parsing('filters1.tsv',0,2)
